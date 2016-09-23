@@ -1,3 +1,6 @@
+# Editor files
+*.swp
+
 # Object files
 *.o
 *.ko
@@ -27,6 +30,7 @@
 *.i*86
 *.x86_64
 *.hex
+glutapp
 
 # Debug files
 *.dSYM/
