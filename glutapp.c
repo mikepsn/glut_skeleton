@@ -1,3 +1,10 @@
+/*
+** OpenGL Demo: GLUT Skeleton Code
+** Author: Michael Papasimeon (mikepsn) 
+** Date: February 2001
+*/
+
+#include <stdlib.h> 
 
 #ifdef __APPLE__ 
 #include <OpenGL/gl.h> 
@@ -15,19 +22,14 @@
 #ifdef __linux__
 #endif
 
-/*
-** OpenGL Demo: GLUT Skeleton Code
-** Author: Michael Papasimeon (mikepsn) 
-** Date: February 2001
-*/
 
 // FUNCTION PROTOTYPES
-static void Display(void);
-//static void Idle(void);
-static void Reshape(int width, int height);
-//static void Key(unsigned char key, int x, int y);
-//static void SpecialKey(int key, int x, int y);
-static void Init(int argc, char** argv);
+static void display(void);
+//static void idle(void);
+static void reshape(int width, int height);
+static void key(unsigned char key, int x, int y);
+//static void special_key(int key, int x, int y);
+static void init(int argc, char** argv);
 
 int main(int argc, char** argv)
 {
@@ -36,9 +38,10 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 	glutCreateWindow("Skeleton GLUT Application - mikepsn");
 
-	Init(argc, argv);
-	glutDisplayFunc(Display);
-	glutReshapeFunc(Reshape);
+	init(argc, argv);
+	glutDisplayFunc(display);
+	glutReshapeFunc(reshape);
+    glutKeyboardFunc(key); 
 
 	glutMainLoop();
 	
@@ -46,7 +49,7 @@ int main(int argc, char** argv)
 }
 
 
-static void Init(int argc, char** argv)
+static void init(int argc, char** argv)
 {
 	glClearDepth(1.0);
 	glClearColor(0.5, 0.5, 0.5, 0.5);
@@ -55,7 +58,7 @@ static void Init(int argc, char** argv)
 	
 }
 
-static void Display(void)
+static void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -124,7 +127,7 @@ static void Display(void)
 	glutSwapBuffers();
 } 
 
-static void Reshape(int width, int height)
+static void reshape(int width, int height)
 {
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -137,3 +140,14 @@ static void Reshape(int width, int height)
 			  0.0f, 0.0f, 1.0f);
 	glViewport(0, 0, (GLint) width, (GLint) height);
 }
+
+static void key(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+        case 27: // Escape key
+        exit (0);
+        break;
+    }
+    glutPostRedisplay();
+} 
