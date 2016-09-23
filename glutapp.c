@@ -25,27 +25,28 @@
 
 // FUNCTION PROTOTYPES
 static void display(void);
-//static void idle(void);
+static void idle(void);
 static void reshape(int width, int height);
 static void key(unsigned char key, int x, int y);
 //static void special_key(int key, int x, int y);
 static void init(int argc, char** argv);
 
 int main(int argc, char** argv)
-{
-	glutInit(&argc, argv);
-	glutInitWindowSize(640, 480);
-	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
-	glutCreateWindow("Skeleton GLUT Application - mikepsn");
+{ 
+    glutInit(&argc, argv); 
+    glutInitWindowSize(640, 480); 
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH); 
+    glutCreateWindow("Skeleton GLUT Application - mikepsn");
 
-	init(argc, argv);
-	glutDisplayFunc(display);
-	glutReshapeFunc(reshape);
+    init(argc, argv); 
+    glutDisplayFunc(display); 
+    glutReshapeFunc(reshape); 
     glutKeyboardFunc(key); 
+    glutIdleFunc(idle); 
 
-	glutMainLoop();
+    glutMainLoop(); 
 	
-	return 0;
+    return 0;
 }
 
 
@@ -151,3 +152,8 @@ static void key(unsigned char key, int x, int y)
     }
     glutPostRedisplay();
 } 
+
+static void idle(void)
+{
+    glutPostRedisplay(); 
+}
