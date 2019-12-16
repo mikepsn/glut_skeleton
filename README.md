@@ -13,3 +13,14 @@ GLUT or freeglut isn't installed out of the box but can be installed using:
     sudo apt-get install freeglut3-dev g++
     
 This allowed the program to compile and run. 
+
+# On Linux
+
+- Make sure you have the glut library installed. I believe the correct one is freeglut.
+- On Kubuntu you can do the following:
+
+    sudo apt-get install freeglut3-dev
+
+- Type the following to see what freeglut3-dev has installed:
+
+    dpkg -L freeglut3-dev
