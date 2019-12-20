@@ -19,6 +19,8 @@ This allowed the program to compile and run.
 Make sure you have the glut library installed. I believe the correct one is freeglut.
 On Kubuntu you can do the following:
 
+    sudo apt-cache search freeglut
+
     sudo apt-get install freeglut3-dev
 
 Type the following to see what freeglut3-dev has installed:
