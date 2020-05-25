@@ -1,5 +1,7 @@
 /*
  * simplest - simple single buffered RGBA motif program.
+ * To compile: gcc -o xm xm.c -lGL -lGLU -lGLX -lGLw -lXm -lXt -lXext -lX11 -lm
+ *
  */
 #include <stdlib.h>
 #include <stdio.h>

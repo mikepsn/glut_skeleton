@@ -1,4 +1,8 @@
- 
+/*
+ * To compile:
+ * gcc -o xm2 xm2.c -lXm -lXt -lXext -lX11 -lm
+*/
+
 #include <Xm/Xm.h> 
 #include <Xm/PushB.h>
 #include <stdio.h> 
