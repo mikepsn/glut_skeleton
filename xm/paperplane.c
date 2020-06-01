@@ -69,7 +69,7 @@ Colormap     cmap;
 #endif
 Arg          menuPaneArgs[1], args[1];
 
-#define MAX_PLANES 15
+#define MAX_PLANES 5
 
 struct {
     float           speed;      /* zero speed means not flying */
