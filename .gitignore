@@ -24,6 +24,12 @@
 *.dylib
 
 # Executables
+dinoshade
+xm
+glutapp
+paperplane
+xm2
+xm/xm
 *.exe
 *.out
 *.app
